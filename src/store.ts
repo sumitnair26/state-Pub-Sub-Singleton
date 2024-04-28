@@ -5,4 +5,4 @@ interface Game {
     moves: string[];
 }
 
-export const games = [];
+export const games: Game[] = [];
