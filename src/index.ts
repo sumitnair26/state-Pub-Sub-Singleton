@@ -1,7 +1,7 @@
 import { startLogger } from "./logger";
-import { GameManager } from "./store";
+import { gameManager } from "./store";
 
-const gameManager = new GameManager();
+//const gameManager = new GameManager();
 
 startLogger();
 

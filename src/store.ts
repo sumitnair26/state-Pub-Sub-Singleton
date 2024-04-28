@@ -26,4 +26,10 @@ export class GameManager {
         }
         this.games.push(game);
     }
+
+    log() {
+        console.log(this.games)
+    }
 }
+
+export const gameManager = new GameManager();

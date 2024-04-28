@@ -1,7 +1,9 @@
-import { games } from "./store"; 
+import { gameManager } from "./store"; 
+
+//const gameManager = new GameManager();
 
 export function startLogger() {
-    setInterval(()=> {
-        console.log(games);
-    }, 5000);
+    setInterval(()=>{
+        console.log(gameManager.log());
+    },5000)    
 }
