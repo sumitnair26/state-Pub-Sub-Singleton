@@ -1,10 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.gameManager = exports.GameManager = void 0;
+exports.GameManager = void 0;
+/* Singalton */
 class GameManager {
     constructor() {
         this.games = [];
         this.games = [];
+    }
+    static getInstance() {
+        if (GameManager.instance) {
+            return GameManager.instance;
+        }
+        GameManager.instance = new GameManager();
+        return GameManager.instance;
     }
     addMove(gameId, move) {
         console.log(`Adding move ${move} to game ${gameId}`);
@@ -25,4 +33,4 @@ class GameManager {
     }
 }
 exports.GameManager = GameManager;
-exports.gameManager = new GameManager();
+//export const gameManager = GameManager.getInstance();

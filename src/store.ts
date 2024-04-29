@@ -5,10 +5,20 @@ interface Game {
     moves: string[];
 }
 
+/* Singalton */
 export class GameManager {
     games: Game[] = [];
-    constructor() {
+    private static instance: GameManager;
+    private constructor() {
         this.games = [];
+    }
+
+    static getInstance() {
+        if (GameManager.instance) {
+            return GameManager.instance
+        }
+        GameManager.instance = new GameManager();
+        return GameManager.instance
     }
 
     addMove(gameId: string, move: string){
@@ -32,4 +42,4 @@ export class GameManager {
     }
 }
 
-export const gameManager = new GameManager();
+//export const gameManager = GameManager.getInstance();
